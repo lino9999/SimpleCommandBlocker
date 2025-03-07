@@ -1,0 +1,32 @@
+blocked-commands:
+  - "/example.*"
+  - "/plugins"
+  - "/pl"
+  - "/bukkit:.*"
+  - "/op"
+  - "/minecraft:.*"
+  - "/mvremove"
+  - "/mv remove"
+  - "/mvdelete"
+  - "/multiverse-core:.*"
+  - "/sudo"
+  - "/esudo"
+  - "/execute"
+  - "/essentials:.*"
+  - "/about"
+  - "/ver"
+  - "/seed"
+  - "/tnt"
+  - "/eco give"
+
+
+excluded-players:
+  - "AdminExempt"
+  - "Lino9999"
+
+enable-logs: true
+
+messages:
+  blocked: "&cThis command is blocked!"
+  adminAlert: "&e[SimpleCommandBlocker] The player {player} attempted to use a blocked command: /{command}"
+  scbHeader: "&6[SimpleCommandBlocker] Blocked Commands:"

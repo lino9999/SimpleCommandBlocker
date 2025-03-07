@@ -1,0 +1,8 @@
+name: SimpleCommandBlocker
+version: '1.0'
+main: com.Lino.simpleCommandBlocker.SimpleCommandBlocker
+api-version: '1.21'
+authors: [Lino9999]
+commands:
+  scb:
+    description: View the list of blocked commands and statistics of failed attempts
