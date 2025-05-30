@@ -1,8 +1,50 @@
 name: SimpleCommandBlocker
 version: '1.0'
 main: com.Lino.simpleCommandBlocker.SimpleCommandBlocker
-api-version: '1.21'
+api-version: 1.13
 authors: [Lino9999]
+# Plugin loading priority (STARTUP, POSTWORLD)
+load: POSTWORLD
+
+# Commands defined by this plugin
 commands:
   scb:
-    description: View the list of blocked commands and statistics of failed attempts
+    description: Main command for SimpleCommandBlocker
+    usage: |
+      /<command> - Show blocked commands list
+      /<command> reload - Reload plugin configuration
+      /<command> stats - Show plugin statistics
+      /<command> help - Show available commands
+    permission: simplecommandblocker.admin
+    permission-message: "&cYou don't have permission to use this command!"
+    aliases: [simplecommandblocker, commandblocker, scblocker]
+
+permissions:
+  simplecommandblocker.admin:
+    description: Access to SimpleCommandBlocker admin commands
+    default: op
+    children:
+      simplecommandblocker.notify: true
+      simplecommandblocker.reload: true
+      simplecommandblocker.stats: true
+  simplecommandblocker.notify:
+    description: Receive notifications when players attempt blocked commands
+    default: op
+  simplecommandblocker.bypass:
+    description: Bypass all command blocking (alternative to excluded-players list)
+    default: false
+  simplecommandblocker.reload:
+    description: Permission to reload plugin configuration
+    default: op
+  simplecommandblocker.stats:
+    description: Permission to view plugin statistics
+    default: op
+  simplecommandblocker.*:
+    description: Grants all SimpleCommandBlocker permissions
+    default: false
+    children:
+      simplecommandblocker.admin: true
+      simplecommandblocker.notify: true
+      simplecommandblocker.bypass: true
+      simplecommandblocker.reload: true
+      simplecommandblocker.stats: true

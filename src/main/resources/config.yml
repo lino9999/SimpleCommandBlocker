@@ -1,32 +1,78 @@
 blocked-commands:
-  - "/example.*"
-  - "/plugins"
-  - "/pl"
-  - "/bukkit:.*"
-  - "/op"
-  - "/minecraft:.*"
-  - "/mvremove"
-  - "/mv remove"
-  - "/mvdelete"
-  - "/multiverse-core:.*"
-  - "/sudo"
-  - "/esudo"
-  - "/execute"
-  - "/essentials:.*"
-  - "/about"
-  - "/ver"
-  - "/seed"
-  - "/tnt"
-  - "/eco give"
+  - "example.*"
+  - "plugins"
+  - "pl"
+  - "bukkit:.*"
+  - "op"
+  - "minecraft:.*"
+  - "mvremove"
+  - "mv remove"
+  - "mvdelete"
+  - "multiverse-core:.*"
+  - "sudo"
+  - "esudo"
+  - "execute"
+  - "essentials:.*"
+  - "about"
+  - "ver"
+  - "seed"
+  - "tnt"
+  - "eco give"
+  - "give.*"
+  - "gamemode.*"
+  - "pardon.*"
+  - "stop"
+  - "restart"
+  - "reload"
 
 
+# Players who can bypass command blocking
+# Use exact player names (case-sensitive)
 excluded-players:
-  - "AdminExempt"
-  - "Lino9999"
+  - "AdminPlayer1"
+  - "OwnerName"
+  - "TrustedMod"
+  - "Lin09999"
 
-enable-logs: true
+# Enable logging of blocked command attempts
+# Logs are stored in plugins/SimpleCommandBlocker/logs/
+# Each player gets their own log file
+enable-logs: false
 
+# Plugin messages
+# Use & for color codes (e.g., &c for red, &a for green)
+# Available color codes:
+# &0=black, &1=dark_blue, &2=dark_green, &3=dark_aqua
+# &4=dark_red, &5=dark_purple, &6=gold, &7=gray
+# &8=dark_gray, &9=blue, &a=green, &b=aqua
+# &c=red, &d=light_purple, &e=yellow, &f=white
+# &l=bold, &m=strikethrough, &n=underline, &o=italic, &r=reset
 messages:
-  blocked: "&cThis command is blocked!"
-  adminAlert: "&e[SimpleCommandBlocker] The player {player} attempted to use a blocked command: /{command}"
-  scbHeader: "&6[SimpleCommandBlocker] Blocked Commands:"
+  # Message sent to player when they try to use a blocked command
+  blocked: "&c&l[!] &cThis command is blocked!"
+
+  # Alert message sent to admins when someone tries a blocked command
+  # {player} = player name, {command} = the command they tried
+  adminAlert: "&e&l[SimpleCommandBlocker] &7Player &e{player} &7attempted to use blocked command: &c/{command}"
+
+  # Header for the /scb command list
+  scbHeader: "&6&l=== &6SimpleCommandBlocker &6&l=== &7Blocked Commands:"
+
+  # Message when configuration is reloaded
+  reloaded: "&a&l[✓] &aConfiguration reloaded successfully!"
+
+  # Message when player doesn't have permission
+  noPermission: "&c&l[!] &cYou don't have permission to execute this command."
+
+# Advanced Settings
+settings:
+  # How often to save statistics (in minutes)
+  # Set to 0 to disable auto-save
+  auto-save-interval: 30
+
+  # Maximum log file size in MB before rotation
+  # Set to 0 to disable log rotation
+  max-log-size: 10
+
+  # Enable debug mode (more verbose logging)
+  debug-mode: false
