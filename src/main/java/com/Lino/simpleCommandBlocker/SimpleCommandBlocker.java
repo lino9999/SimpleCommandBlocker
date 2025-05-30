@@ -35,7 +35,7 @@ public class SimpleCommandBlocker extends JavaPlugin implements Listener, Comman
         loadConfiguration();
         getServer().getPluginManager().registerEvents(this, this);
         getCommand("scb").setExecutor(this);
-        getLogger().info("SimpleCommandBlocker abilitato!");
+        getLogger().info("SimpleCommandBlocker activated!");
     }
 
     private void loadConfiguration() {

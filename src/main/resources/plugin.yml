@@ -1,12 +1,9 @@
 name: SimpleCommandBlocker
-version: '1.0'
+version: '2.0'
 main: com.Lino.simpleCommandBlocker.SimpleCommandBlocker
 api-version: 1.13
 authors: [Lino9999]
-# Plugin loading priority (STARTUP, POSTWORLD)
 load: POSTWORLD
-
-# Commands defined by this plugin
 commands:
   scb:
     description: Main command for SimpleCommandBlocker
