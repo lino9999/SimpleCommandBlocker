@@ -1,3 +1,11 @@
+# SimpleCommandBlocker Configuration
+
+# Commands to block (without the leading slash)
+# You can use regex patterns for advanced matching
+# Examples:
+#   - "op" blocks /op command
+#   - "give.*" blocks all /give commands with any parameters
+#   - "tp.*" blocks all teleport-related commands
 blocked-commands:
   - "example.*"
   - "plugins"
